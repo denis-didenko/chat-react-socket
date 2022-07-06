@@ -1,0 +1,23 @@
+.chat-block {
+    flex-grow: 1;
+    background: url('../../../assets/bg.jpg') no-repeat center center / cover;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-footer input {
+    flex-grow: 1;
+}
+
+.chat-footer button {
+    width: 30%;
+    margin-left: 10px;
+}

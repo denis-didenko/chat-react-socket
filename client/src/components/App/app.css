@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+    --font: 'Source Sans Pro', sans-serif;
+    --primary: #3390ec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+:focus {
+    outline: none;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+body {
+    background: #eff3f6;
+    font-family: var(--font);
+    font-size: 14px;
+    color: #354052;
+}
+
+a {
+    color: #2ea1f8;
+    transition: all 0.2s;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+select,
+textarea {
+    font-family: var(--font);
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e6eaee;
+    border-radius: 20px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+}
+
+button,
+.btn {
+    background: var(--primary);
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #1a91eb;
+    border-radius: 20px;
+    color: #fff;
+    font-family: var(--font);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover,
+.btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 2px var(--primary);
+}
+
+.wrapper {
+    background: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}

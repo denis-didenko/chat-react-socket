@@ -5,11 +5,28 @@ import { Server } from 'socket.io';
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-    /* options */
+    cors: {
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST'],
+    },
 });
 
 io.on('connection', socket => {
-    // ...
+    console.log(socket.id);
+
+    socket.on('join-room', room => {
+        socket.join(room);
+    });
+
+    socket.on('send-message', data => {
+        socket.to(data.room).emit('receive-message', data);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('User are disconnected', socket.id);
+    });
 });
 
-httpServer.listen(3000);
+httpServer.listen(5000, () => {
+    console.log('listening on port 5000');
+});
