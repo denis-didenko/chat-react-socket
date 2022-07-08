@@ -33,6 +33,7 @@ const Chat = () => {
         socket.on('joined-room-clients', data => {
             setRoom(data);
         });
+        // eslint-disable-next-line
     }, [socket]);
 
     return (
