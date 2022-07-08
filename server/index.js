@@ -12,13 +12,13 @@ const io = new Server(httpServer, {
 });
 
 io.on('connection', socket => {
-    console.log(socket.id);
-
     socket.on('join-room', room => {
         socket.join(room);
+        socket.emit('joined-room-clients', io.sockets.adapter.rooms.get(room).size);
     });
 
     socket.on('send-message', data => {
+        console.log('data: ', data);
         socket.to(data.room).emit('receive-message', data);
     });
 
