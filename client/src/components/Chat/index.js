@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, memo } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Picker from 'emoji-picker-react';
 import AppContext from '../../context/app';

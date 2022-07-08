@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../../context/app';
 import './login.css';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { socket, userName, roomName, setUserName, setRoomName, setIsLoggedIn, setRoom } = useContext(AppContext);
+    const { socket, userName, roomName, setUserName, setRoomName, setIsLoggedIn } = useContext(AppContext);
 
     const submitFormHandler = e => {
         e.preventDefault();
