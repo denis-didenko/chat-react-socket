@@ -48,7 +48,7 @@
     background: #fff;
     font-size: 16px;
     padding: 3px 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 12px 12px 12px 0;
     box-shadow: 0 1px 2px 0 rgb(16, 35, 47, 15%);
 }
@@ -83,13 +83,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
-.chat-footer input {
+.chat-footer input[type='text'] {
     flex-grow: 1;
+    padding-left: 35px;
 }
 
 .chat-footer button {
     width: 30%;
     margin-left: 10px;
+}
+
+.chat-emoji aside.emoji-picker-react {
+    position: absolute;
+    bottom: 50px;
+    box-shadow: none;
+}
+
+.chat-emoji .emoji-picker-react .emoji-categories,
+.chat-emoji .emoji-picker-react .emoji-group:before {
+    display: none;
+}
+
+.emoji-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    margin: auto;
 }

@@ -14,7 +14,7 @@ const io = new Server(httpServer, {
 io.on('connection', socket => {
     socket.on('join-room', room => {
         socket.join(room);
-        socket.emit('joined-room-clients', io.sockets.adapter.rooms.get(room).size);
+        io.to(room).emit('joined-room-clients', io.sockets.adapter.rooms.get(room).size);
     });
 
     socket.on('send-message', data => {
