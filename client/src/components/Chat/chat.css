@@ -1,7 +1,6 @@
 .chat-block {
     flex-grow: 1;
     background: url('../../../assets/bg.jpg') no-repeat center center / cover;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,7 +8,6 @@
 
 .chat-header {
     background: #fff;
-    margin: -20px -20px 0;
     padding: 5px 20px;
 }
 
@@ -28,7 +26,7 @@
 
 .chat-body {
     flex-grow: 1;
-    padding: 20px 0;
+    padding: 20px 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -84,6 +82,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    margin: 20px;
 }
 
 .chat-footer input[type='text'] {
