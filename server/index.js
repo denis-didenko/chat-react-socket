@@ -9,8 +9,9 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
         //origin: 'http://localhost:3000',
-        origin: 'https://62c859015521e23e4c8bf39e--chat-react-socket-io.netlify.app',
-        methods: ['GET', 'POST'],
+        //origin: 'https://62c859015521e23e4c8bf39e--chat-react-socket-io.netlify.app',
+        origin: '*',
+        credentials: true,
     },
 });
 
