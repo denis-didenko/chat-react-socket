@@ -4,6 +4,7 @@ import { Server } from 'socket.io';
 import cors from 'cors';
 
 const app = express();
+app.use(cors());
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
@@ -12,8 +13,6 @@ const io = new Server(httpServer, {
         methods: ['GET', 'POST'],
     },
 });
-
-app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
