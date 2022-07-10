@@ -78,19 +78,25 @@
 }
 
 .chat-footer {
+    padding: 20px;
+}
+
+.messages-form {
+    position: relative;
+}
+
+.messages-form form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    margin: 20px;
 }
 
-.chat-footer input[type='text'] {
+.messages-form input[type='text'] {
     flex-grow: 1;
     padding-left: 35px;
 }
 
-.chat-footer button {
+.messages-form button {
     width: 30%;
     margin-left: 10px;
 }

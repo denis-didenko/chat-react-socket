@@ -9,10 +9,10 @@ const AppContext = createContext({});
 export const AppContextProvider = ({ children }) => {
     const [userName, setUserName] = useState('');
     const [roomName, setRoomName] = useState('');
-    const [room, setRoom] = useState(null);
+    const [roomUsersCount, setRoomUsersCount] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const store = { socket, userName, roomName, room, isLoggedIn, setUserName, setRoomName, setRoom, setIsLoggedIn };
+    const store = { socket, userName, roomName, roomUsersCount, isLoggedIn, setUserName, setRoomName, setRoomUsersCount, setIsLoggedIn };
 
     return <AppContext.Provider value={store}>{children}</AppContext.Provider>;
 };

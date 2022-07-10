@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
-import AppContext from '../../context/app';
+import React, { memo } from 'react';
 
-const Messages = ({ messages }) => {
-    const { userName } = useContext(AppContext);
-
+const Messages = ({ messages, userName }) => {
     return (
         <div className='messages-list'>
             {messages.map(message => {
@@ -19,4 +16,4 @@ const Messages = ({ messages }) => {
     );
 };
 
-export default Messages;
+export default memo(Messages);

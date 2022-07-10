@@ -1,10 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import AppContext from '../../context/app';
 import './login.css';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { socket, userName, roomName, setUserName, setRoomName, setIsLoggedIn } = useContext(AppContext);
+    const { socket, setIsLoggedIn, setUserName, setRoomName } = useContext(AppContext);
+    const nameRef = useRef(null);
+    const roomRef = useRef(null);
 
     const submitFormHandler = e => {
         e.preventDefault();
@@ -15,12 +17,14 @@ const Login = () => {
             return;
         }
 
-        socket.emit('join-room', roomName);
+        socket.emit('join-room', roomRef.current.value);
         setIsLoggedIn(true);
+        setUserName(nameRef.current.value);
+        setRoomName(roomRef.current.value);
     };
 
     const validateForm = () => {
-        return userName.length && roomName.length;
+        return nameRef.current.value && roomRef.current.value;
     };
 
     return (
@@ -28,8 +32,8 @@ const Login = () => {
             <div className='login-form'>
                 <h2>Login</h2>
                 <form onSubmit={submitFormHandler}>
-                    <input type='text' placeholder='Username' onChange={e => setUserName(e.target.value)} />
-                    <input type='text' placeholder='Room' onChange={e => setRoomName(e.target.value)} />
+                    <input type='text' placeholder='Username' ref={nameRef} />
+                    <input type='text' placeholder='Room' ref={roomRef} />
                     <button type='submit'>Login</button>
                     <div className='form-error'>{error}</div>
                 </form>
