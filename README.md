@@ -3,8 +3,8 @@
 DEMO: [https://chat-react-socket-io.netlify.app/](https://chat-react-socket-io.netlify.app/)
 
 ### Client: 
-* React (hooks)
-* Context API
+* react (hooks)
+* context API
 * socket.io-client 
 
 
