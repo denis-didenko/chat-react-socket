@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState } from 'react';
 import Picker from 'emoji-picker-react';
 
 const Emoji = ({ currentMessage, setCurrentMessage }) => {
